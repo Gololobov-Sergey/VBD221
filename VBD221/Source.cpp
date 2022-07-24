@@ -218,7 +218,7 @@ int main()
 		break;
 	}*/
 
-	int a, b, max;
+	/*int a, b, max;
 	cin >> a >> b;
 	if (a > b)
 	{
@@ -227,13 +227,139 @@ int main()
 	else
 	{
 		max = b;
-	}
+	}*/
 
 	// (condition) ? op1 : op2;
 
-	(a > b) ? max = a : max = b;
+	/*(a > b) ? max = a : max = b;
 
-	max = (a > b) ? a : b;
+	max = (a > b) ? a : b;*/
 
+    /////  24.7.2022 ///////////
+	
+	/*while (condition)
+	{
+		operator;
+	}*/
+
+	/*int a = 5;
+
+	if (a == 9)
+	{
+		cout << a;
+		cout << a;
+	}
+
+	while (a >= 1)
+	{
+		cout << a << " ";
+		a--;
+	}*/
+
+
+	/*int a, b, c = 0;
+	cin >> a >> b;
+	while (a >= b)
+	{
+		a -= b;
+		c++;
+	}
+	cout << c << endl;*/
+
+
+	/*int a, s = 0;
+	cin >> a;
+	while (a > 0)
+	{
+		s += (a % 10);
+		a /= 10;
+	}
+	cout << s;*/
+
+	/*int a, s = 0;
+	cin >> a;
+	while (a > 0)
+	{
+		int r = a % 10;
+		if (r % 2 == 0)
+		{
+			s++;
+		}
+		a /= 10;
+	}
+	cout << s;*/
+
+	//int n, s = 0;
+	//do
+	//{
+	//	cin >> n;
+	//	s += n;
+	//} while (n != 0); //!!!!!
+	//cout << s << endl;
+
+	/*int f1 = 1, f2 = 1, fn, k = 2, n;
+	cin >> n;
+	while (k < n)
+	{
+		fn = f1 + f2;
+		f1 = f2;
+		f2 = fn;
+		k++;
+	}
+	cout << fn << endl;*/
+
+
+	/*int a, b;
+	cin >> a >> b;
+	for (int i = a; i <= b; i++)
+	{
+		cout << i << " ";
+	}*/
+
+	/*for (int i = 0, j = 10; i <= 20; i+=2, j--)
+	{
+		cout << i << " ";
+	}*/
+
+	/*for ( ; ; )
+	{
+		if(a == 7)
+			break;
+		cout << 0 << " ";
+	}*/
+
+	/*int n;
+	cin >> n;
+	for (size_t i = 1; i <= 10; i++)
+	{
+		cout << i << " x " << n << " = " << i * n << endl;
+	}*/
+
+	/*for (size_t i = 0; i < 21; i++)
+	{
+		if (i % 2 == 1)
+			continue;
+		cout << i << " ";
+	}*/
+
+
+	/*int i, c = 0;
+	for (size_t i = 1; i < 1000000; i++)
+	{
+		int a6 = i % 10;
+		int a5 = i / 10 % 10;
+		int a4 = i / 100 % 10;
+		int a3 = i / 1000 % 10;
+		int a2 = i / 10000 % 10;
+		int a1 = i / 100000;
+		if (a1 + a2 + a3 == a4 + a5 + a6)
+		{
+			c++;
+		}
+	}
+	cout << c << endl;*/
+
+
+	
 	system("pause");
 }
