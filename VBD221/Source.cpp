@@ -235,8 +235,8 @@ int main()
 
 	max = (a > b) ? a : b;*/
 
-    /////  24.7.2022 ///////////
-	
+	/////  24.7.2022 ///////////
+
 	/*while (condition)
 	{
 		operator;
@@ -359,7 +359,47 @@ int main()
 	}
 	cout << c << endl;*/
 
+	/*int c = 0;
+	for (size_t h = 0; h < 24; h++)
+	{
+		int h1 = h / 10;
+		int h2 = h % 10;
+		for (size_t m = 0; m < 60; m++)
+		{
+			int m1 = m / 10;
+			int m2 = m % 10;
+			for (size_t s = 0; s < 60; s++)
+			{
+				int s1 = s / 10;
+				int s2 = s % 10;
+				if (h1 == s2 && h2 == s1 && m1 == m2)
+				{
+					cout << h1 << h2 << ":" << m1 << m2 << ":" << s1 << s2 << endl;
+					c++;
+				}
+			}
 
-	
+		}
+	}
+	cout << c << endl;*/
+
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n - 1 - i; j++)
+		{
+			cout << " ";
+		}
+		for (int j = 0; j < 2*i + 1; j++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+
+
+
+
 	system("pause");
 }
