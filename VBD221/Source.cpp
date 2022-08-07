@@ -1,5 +1,6 @@
 #include<iostream>
 #include<Windows.h>
+#include<ctime>
 
 using namespace std;
 
@@ -124,25 +125,34 @@ int main()
 		cout << c << endl;
 	}*/
 
-	/*int a, b, c, d, res = 0;
-	cin >> a >> b >> c >> d;
-	if (a % 2 == 0)
-	{
-		res += a;
-	}
-	if (b % 2 == 0)
-	{
-		res += b;
-	}
-	if (c % 2 == 0)
-	{
-		res += c;
-	}
-	if (d % 2 == 0)
-	{
-		res += d;
-	}
-	cout << res << endl;*/
+	//int a, b, c, d, res = 0;
+	//cin >> a >> b >> c >> d;
+
+	//for (size_t i = 0; i < 4; i++)
+	//{
+	//	if (a % 2 == 0)
+	//	{
+	//		res += a;
+	//	}
+	//}
+
+	///*if (a % 2 == 0)
+	//{
+	//	res += a;
+	//}
+	//if (b % 2 == 0)
+	//{
+	//	res += b;
+	//}
+	//if (c % 2 == 0)
+	//{
+	//	res += c;
+	//}
+	//if (d % 2 == 0)
+	//{
+	//	res += d;
+	//}*/
+	//cout << res << endl;
 
 
 	/*int a;
@@ -383,7 +393,7 @@ int main()
 	}
 	cout << c << endl;*/
 
-	int n;
+	/*int n;
 	cin >> n;
 	for (int i = 0; i < n; i++)
 	{
@@ -396,9 +406,125 @@ int main()
 			cout << "*";
 		}
 		cout << endl;
+	}*/
+
+	////// 07.08.2022  //////
+
+	// type name[size];
+
+	srand(time(0));
+	const int size = 10;
+	int a[size];
+	for (size_t i = 0; i < size; i++)
+	{
+		/*cout << "a[" << i << "] = ";
+		cin >> a[i];*/
+
+		a[i] = rand() % 100;
+	}
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << a[i] << " ";
+	}
+	cout << endl;
+
+	/*int count0 = 0;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		if (a[i] == 0)
+			count0++;
+	}
+
+	int count01 = 0;
+	for (size_t i = 0; a[i] != 1; i++)
+	{
+		count01++;
+	}*/
+	/*cout << count0 << endl;
+	cout << count01 << endl;*/
+
+
+	/*int n;
+	cin >> n;
+	int count = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		if (a[i] == n)
+			count++;
+	}
+	cout << count << endl;*/
+
+	//int max = a[0];
+	/*int imax = 0;
+	int imin = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		imax = (a[i] > a[imax]) ? i : imax;
+		imin = (a[i] < a[imin]) ? i : imin;
+	}
+
+	int i_begin = (imin < imax) ? imin : imax;
+	int i_end = (imax > imin) ? imax : imin;
+
+	for (size_t i = i_begin+1; i < i_end; i++)
+	{
+		a[i] *= 10;
+	}*/
+
+
+	//cout << a[imax] << endl;
+	//cout << imax << endl;
+
+	/*int t = a[0];
+	a[0] = a[imax];
+	a[imax] = t;*/
+
+	//int b[size], c = 0;
+	/*for (size_t i = 0; i < size; i++)
+	{
+		if (a[i] % 2 == 0)
+		{
+			b[c++] = a[i];
+		}
+	}*/
+
+	/*int b[size * 2], c = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		b[c++] = a[i];
+		if (a[i] % 2 == 0)
+		{
+			b[c++] = 99;
+		}
+
+	}*/
+
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		for (size_t j = 0; j < size-1-i; j++)
+		{
+			if (a[j] < a[j + 1])
+			{
+				swap(a[j], a[j + 1]);
+			}
+		}
 	}
 
 
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << a[i] << " ";
+	}
+	cout << endl;
+
+	/*for (size_t i = 0; i < c; i++)
+	{
+		cout <<b[i] << " ";
+	}
+	cout << endl;*/
+
+	//cout << time(0) << endl;
 
 
 	system("pause");
