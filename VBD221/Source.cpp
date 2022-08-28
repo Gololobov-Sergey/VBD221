@@ -2,95 +2,11 @@
 #include<Windows.h>
 #include<ctime>
 #include<iomanip>
+#include"Function.h"
 
 using namespace std;
 
-//type name (param)
-//{
-//   body;
-//}
 
-template<class T1, class T2, class T3>
-auto Sum(T1 a, T2 b, T3 c) -> decltype(a + c)
-{
-	return a + b + c;
-}
-
-
-void printLine(int count = 10, char symbol = '*')
-{
-	for (size_t i = 0; i < count; i++)
-	{
-		cout << symbol;
-	}
-	cout << endl;
-}
-
-
-float avg(int a, int b, int c)
-{
-	return (a + b + c) / 3.;
-}
-
-bool isEven(int a)
-{
-	return a % 2 == 0;
-}
-
-bool isMult5(int a)
-{
-	return a % 5 == 0;
-}
-
-bool isPositive(int a)
-{
-	return a > 0;
-}
-
-
-template<class T>
-void setArray(T a[], int size)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		a[i] = rand() % 10;
-	}
-}
-
-template<class T>
-void printArray(T a[], int size)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		cout << a[i] << " ";
-	}
-	cout << endl;
-}
-
-template<class T>
-int findKeyArray(T a[], int size, T key)
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		if (a[i] == key)
-		{
-			return i;
-		}
-	}
-	return -1;
-}
-
-template<class T>
-T maxValueArray(T a[], int size)
-{
-	T max = a[0];
-	for (size_t i = 0; i < size; i++)
-	{
-		if (a[i] > max)
-			max = a[i];
-	}
-	return max;
-}
 
 int main()
 {
@@ -98,10 +14,24 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	///// 28.08.2022 ////
+
+	//cout << fact_r(5) << endl;
+	num_(5);
+
+	/*{
+		int a = 10;
+		cout << a << endl;
+	}
+
+	fooo();*/
+
+
+	//cout << a << endl;
 
 	///// 14.08.2022 //////
 
-	const int size = 10;
+	/*const int size = 10;
 	int a[size];
 	setArray(a, size);
 	printArray(a, size);
@@ -115,7 +45,7 @@ int main()
 
 	typedef long double LD;
 
-	LD dd;
+	LD dd;*/
 
 	/*printLine();
 	printLine(20);

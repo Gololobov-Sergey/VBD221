@@ -131,6 +131,9 @@
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SourceOld.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Function.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
