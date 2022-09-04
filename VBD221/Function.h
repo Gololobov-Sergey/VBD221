@@ -49,7 +49,7 @@ bool isPositive(int a)
 
 
 template<class T>
-void setArray(T a[], int size)
+void setArray(T* a, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -58,7 +58,7 @@ void setArray(T a[], int size)
 }
 
 template<class T>
-void printArray(T a[], int size)
+void printArray(T* a, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -68,7 +68,7 @@ void printArray(T a[], int size)
 }
 
 template<class T>
-int findKeyArray(T a[], int size, T key)
+int findKeyArray(T* a, int size, T key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -81,7 +81,7 @@ int findKeyArray(T a[], int size, T key)
 }
 
 template<class T>
-T maxValueArray(T a[], int size)
+T maxValueArray(T* a, int size)
 {
 	T max = a[0];
 	for (size_t i = 0; i < size; i++)
@@ -138,3 +138,48 @@ int pow_(int a, int n)
 	return a * pow_(a, n - 1);
 }
 
+template<class T>
+T* addElemArray(T* a, int size, T elem)
+{
+	T* temp = new T[size + 1];
+
+	for (size_t i = 0; i < size; i++)
+	{
+		temp[i] = a[i];
+	}
+
+	temp[size] = elem;
+
+	delete[]a;
+
+	return temp;
+}
+
+template<class T>
+T* delElemArray(T* a, int size)
+{
+	T* temp = new T[size - 1];
+	for (size_t i = 0; i < size - 1; i++)
+	{
+		temp[i] = a[i];
+	}
+	delete[]a;
+	return temp;
+}
+
+template<class T>
+T* addElemArray(T* a, int size, T elem, int pos)
+{
+	T* temp = new T[size + 1];
+	for (size_t i = 0; i < pos; i++)
+	{
+		temp[i] = a[i];
+	}
+	temp[pos] = elem;
+	for (size_t i = pos; i < size; i++)
+	{
+		temp[i + 1] = a[i];
+	}
+	delete[]a;
+	return temp;
+}

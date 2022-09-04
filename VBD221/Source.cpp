@@ -16,7 +16,34 @@ int main()
 
 	///// 04.09.2022 ////
 
-	int a[] = { 109,2,3,4,5 };
+	/*for (size_t i = 0; i < 100000000; i++)
+	{
+		int* p = new int;
+		delete p;
+	}*/
+
+	int n;
+	cin >> n;
+	int* p = new int[n];
+	setArray(p, n);
+	printArray(p, n);
+
+	int* b = nullptr, k = 0;
+	for (size_t i = 0; i < n; i++)
+	{
+		if (p[i] % 2 == 0)
+			b = addElemArray(b, k++, p[i]);
+	}
+	printArray(b, k);
+
+
+	/*p = addElemArray(p, n++, 999);
+	p = addElemArray(p, n++, 444,3);*/
+	delete[] p;
+	
+
+
+	/*int a[300000] = { 109,2,3,4,5 };
 
 	int* pa = a;
 
@@ -30,7 +57,7 @@ int main()
 	{
 		cout << *pa << " ";
 	}
-	cout << endl;
+	cout << endl;*/
 
 
 
