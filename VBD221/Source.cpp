@@ -14,10 +14,80 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	///// 04.09.2022 ////
+
+	int a[] = { 109,2,3,4,5 };
+
+	int* pa = a;
+
+	for (size_t i = 0; i < 5; i++)
+	{
+		cout << *(a + i) << " ";
+	}
+	cout << endl;
+
+	for (int* pa = a; pa != &a[5]; pa++)
+	{
+		cout << *pa << " ";
+	}
+	cout << endl;
+
+
+
+	/*cout << *(a+0) << endl;
+	cout << *(a+1) << endl;
+	cout << *(a+2) << endl;
+	cout << *(a+3) << endl;
+	cout << *(a+4) << endl;*/
+
+
+	/*int a;
+	a = 5;
+	int* pa = nullptr;
+	if(pa == nullptr)
+		pa = &a;
+	cout << pa << endl;
+
+	cout << sizeof(pa) << endl;*/
+
+	/*int b = 5;
+	int* pb = &b;
+	cout << pb << endl;
+
+	cout << (pa != pb) << endl;*/
+
+
+
+	//cout << a << endl;
+	//cout << typeid(a).name() << endl;
+	//cout << &a << endl;
+	//cout << sizeof(a) << endl;
+
+	//int* pa = &a;
+	//pa++; // -, +, --, ++
+	//cout << pa << endl;
+	
+
+
+
+	/**pa = 100;
+
+	cout << a << endl;
+
+	int b = 88;
+	pa = &b;
+	*pa = 999;
+	cout << b << endl;*/
+
+	
+
+
+
+
+
 	///// 28.08.2022 ////
 
 	//cout << fact_r(5) << endl;
-	num_(5);
 
 	/*{
 		int a = 10;

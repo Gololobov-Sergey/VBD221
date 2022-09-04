@@ -138,4 +138,3 @@ int pow_(int a, int n)
 	return a * pow_(a, n - 1);
 }
 
-
