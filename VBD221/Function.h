@@ -58,7 +58,7 @@ void setArray(T* a, int size)
 }
 
 template<class T>
-void printArray(T* a, int size)
+void printArray(const T* a, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -139,7 +139,7 @@ int pow_(int a, int n)
 }
 
 template<class T>
-T* addElemArray(T* a, int size, T elem)
+void addElemArray(T*& a, int& size, const T& elem)
 {
 	T* temp = new T[size + 1];
 
@@ -150,13 +150,15 @@ T* addElemArray(T* a, int size, T elem)
 
 	temp[size] = elem;
 
+	size++;
+
 	delete[]a;
 
-	return temp;
+	a = temp;
 }
 
 template<class T>
-T* delElemArray(T* a, int size)
+void delElemArray(T*& a, int& size)
 {
 	T* temp = new T[size - 1];
 	for (size_t i = 0; i < size - 1; i++)
@@ -164,11 +166,12 @@ T* delElemArray(T* a, int size)
 		temp[i] = a[i];
 	}
 	delete[]a;
-	return temp;
+	size--;
+	a = temp;
 }
 
 template<class T>
-T* addElemArray(T* a, int size, T elem, int pos)
+void addElemArray(T*& a, int& size, T elem, int pos)
 {
 	T* temp = new T[size + 1];
 	for (size_t i = 0; i < pos; i++)
@@ -181,5 +184,14 @@ T* addElemArray(T* a, int size, T elem, int pos)
 		temp[i + 1] = a[i];
 	}
 	delete[]a;
-	return temp;
+	size++;
+	a = temp;
+}
+
+template<class T>
+void dinamic_P(T*&a, int size)
+{
+	if (size <= 0)
+		return;
+	a = new T[size];
 }

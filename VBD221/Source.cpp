@@ -14,6 +14,85 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+
+	/*int a = 8;      int b = 8;
+	int* pa = &a;   int& rb = b;
+	*pa = 888;      rb = 888;
+
+	cout << a << endl;
+	cout << b << endl;
+
+	pa = &b;
+	rb = a;*/
+
+	//int a = 10;
+	//const int* pa = &a;  // покажчик на константне значення
+	//a = 12;
+	//*pa = 12;  // not
+	//int b = 3;
+	//pa = &b;
+
+
+	//const int& ra = a;
+	//ra = 45;
+
+	//int* const pa = &a;    //  константний покажчик
+	//int b = 3;
+	//*pa = 999;
+	//pa = &b; // not
+
+	//int& pb = a;
+
+	//const int* const pa = &a;   // константний покажчик на константне значення
+
+
+	/*int m, n, k = 0;
+	cin >> m >> n;
+	int* a = new int[m];
+	int* b = new int[n];
+	int* c = nullptr;
+	setArray(a, m);
+	setArray(b, n);
+	printArray(a, m);
+	printArray(b, n);*/
+
+	/*for (size_t i = 0; i < m; i++)
+	{
+		if (findKeyArray(b, n, a[i]) == -1 && findKeyArray(c, k, a[i]) == -1) 
+		{
+			addElemArray(c, k, a[i]);
+		}
+	}
+	printArray(c, k);
+
+
+	int* x = nullptr;
+	dinamic_P(x, 10);*/
+
+
+	/*const int size = 5;
+	int array[size] = { 115,76,16,89,36 };
+	int* ptra = array;
+	int b_array[size];
+	int* ptrb = b_array;
+	cout << "Массив А: ";
+	for (int i = 0; i < size; i++)
+	{
+		cout << *(ptra+i) << " ";
+	}
+	cout << endl;
+	cout << "Массив В: ";
+	for (int i = 0; i < size; i++)
+	{
+		ptrb = ptra;
+		ptrb--;
+		cout << *(ptrb+size-i) << " ";
+	}
+	cout << endl;*/
+	
+	
+
+
 	///// 04.09.2022 ////
 
 	/*for (size_t i = 0; i < 100000000; i++)
@@ -22,7 +101,7 @@ int main()
 		delete p;
 	}*/
 
-	int n;
+	/*int n;
 	cin >> n;
 	int* p = new int[n];
 	setArray(p, n);
@@ -34,12 +113,12 @@ int main()
 		if (p[i] % 2 == 0)
 			b = addElemArray(b, k++, p[i]);
 	}
-	printArray(b, k);
+	printArray(b, k);*/
 
 
 	/*p = addElemArray(p, n++, 999);
 	p = addElemArray(p, n++, 444,3);*/
-	delete[] p;
+	//delete[] p;
 	
 
 
