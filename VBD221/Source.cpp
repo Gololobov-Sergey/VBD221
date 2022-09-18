@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<iostream>
 #include<Windows.h>
 #include<ctime>
@@ -13,6 +14,134 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+
+	////// 18.09.2022 ///////
+
+
+	/*char str[] = { 'H', 'e', 'l', 'l', 'o', '\0'};
+	char str1[] = "Hello";
+	int a[] = { 11,2,3,4,5 };
+
+	char* t = str + 2;
+	cout << t << endl;
+
+
+	cout << lenStr(str1) << endl;
+	cout << strlen(str1) << endl;*/
+
+
+
+	/*char str[80];
+	cin.getline(str, 80);
+	cout << str << endl;*/
+
+	char buff[1024];
+	cin.getline(buff, 1024);
+	char* st1 = new char[strlen(buff) + 1];
+	strcpy(st1, buff);
+
+	char* st2 = new char[80];
+	cin.getline(st2, 80);
+
+
+	//strcpy(st1, st2);
+	//cout << st1 << endl;
+
+	//strcpy_s(st1, 80, st2);
+	//cout << st1 << endl;
+
+	//strncpy(st1, st2, 5);
+	//cout << st1 << endl;
+
+	//strncpy_s(st1, 80, st2, 5);
+	//cout << st1 << endl;
+
+	//cout << (void*)st1 << endl;
+
+	//strcat(st1, st2);
+	//cout << st1 << endl;
+
+	//strncat(st1, st2, 5);
+	//cout << st1 << endl;
+
+	//cout << strcmp(st1, st2) << endl;
+	//cout << strncmp(st1, st2, 5) << endl;
+	//cout << _stricmp(st1, st2) << endl;
+	//cout << _strnicmp(st1, st2, 5) << endl;
+
+
+	//char* t = strchr(st1, 's');
+	//char* t = strrchr(st1, 's');
+	/*char* t = strstr(st1, st2);
+	if(t)
+		cout << t << endl;*/
+
+	//cout << _strlwr(st1) << endl;
+	//cout << _strupr(st1) << endl;
+
+
+	//cout << _strrev(st1) << endl;
+
+	//_strset(st1, '#');
+	//cout << st1 << endl;
+
+	/*cout << isalnum('!') << endl;
+	cout << isdigit('3') << endl;
+	cout << isspace('3') << endl;
+	cout << ispunct('3') << endl;
+	cout << isalpha('G') << endl;
+	cout << islower('s') << endl;
+	cout << isupper('s') << endl;*/
+
+	//int f = atoi(st1);
+	//cout << f << endl;
+
+	/*double f = atof(st1);
+	cout << f << endl;*/
+
+	//long f = atol(st1);
+	//cout << f << endl;
+
+	/*_itoa(24646, st1, 2);
+	cout << st1 << endl;*/
+
+	/*int len;
+	cin >> len;
+
+	void(*director)() = prorab(len);
+	director();*/
+
+
+	/*int n;
+	cin >> n;
+	int* p = new int[n];
+	setArray(p, n);
+	printArray(p, n);
+	bubbleSort(p, n);
+	printArray(p, n);*/
+
+
+	//cout << hello << endl;
+
+	// type (*name) (param);
+
+	/*void(*message)();
+	message = hello;
+	message();
+	message = goodbye;
+	message();*/
+
+	/*int(*operation[])(int, int) = {Sum, Diff, Mult};
+	int a, b;
+	cin >> a >> b;
+	cout << "1+, 2-, 3*";
+	int n;
+	cin >> n;
+	cout << operation[n-1](a, b) << endl;*/
+	/*for (size_t i = 0; i < 3; i++)
+	{
+		cout << operation[i](a, b) << endl;
+	}*/
 
 
 	/*int a = 8;      int b = 8;
@@ -58,7 +187,7 @@ int main()
 
 	/*for (size_t i = 0; i < m; i++)
 	{
-		if (findKeyArray(b, n, a[i]) == -1 && findKeyArray(c, k, a[i]) == -1) 
+		if (findKeyArray(b, n, a[i]) == -1 && findKeyArray(c, k, a[i]) == -1)
 		{
 			addElemArray(c, k, a[i]);
 		}
@@ -89,8 +218,8 @@ int main()
 		cout << *(ptrb+size-i) << " ";
 	}
 	cout << endl;*/
-	
-	
+
+
 
 
 	///// 04.09.2022 ////
@@ -119,7 +248,7 @@ int main()
 	/*p = addElemArray(p, n++, 999);
 	p = addElemArray(p, n++, 444,3);*/
 	//delete[] p;
-	
+
 
 
 	/*int a[300000] = { 109,2,3,4,5 };
@@ -172,7 +301,7 @@ int main()
 	//int* pa = &a;
 	//pa++; // -, +, --, ++
 	//cout << pa << endl;
-	
+
 
 
 
@@ -185,7 +314,7 @@ int main()
 	*pa = 999;
 	cout << b << endl;*/
 
-	
+
 
 
 

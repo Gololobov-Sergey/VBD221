@@ -9,11 +9,11 @@ using namespace std;
 //}
 
 
-template<class T1, class T2, class T3>
-auto Sum(T1 a, T2 b, T3 c) -> decltype(a + c)
-{
-	return a + b + c;
-}
+//template<class T1, class T2, class T3>
+//auto Sum(T1 a, T2 b, T3 c) -> decltype(a + c)
+//{
+//	return a + b + c;
+//}
 
 
 void printLine(int count = 10, char symbol = '*')
@@ -189,9 +189,106 @@ void addElemArray(T*& a, int& size, T elem, int pos)
 }
 
 template<class T>
-void dinamic_P(T*&a, int size)
+void dinamic_P(T*& a, int size)
 {
 	if (size <= 0)
 		return;
 	a = new T[size];
+}
+
+void hello()
+{
+	cout << "Hello" << endl;
+}
+
+void goodbye()
+{
+	cout << "Goodbye" << endl;
+}
+
+int Sum(int a, int b)
+{
+	return a + b;
+}
+
+int Diff(int a, int b)
+{
+	return a - b;
+}
+
+int Mult(int a, int b)
+{
+	return a * b;
+}
+
+template<class T>
+bool asc(T a, T b)
+{
+	return a > b;
+}
+
+template<class T>
+bool desc(T a, T b)
+{
+	return a < b;
+}
+
+
+bool evenFirst(int a, int b)
+{
+	if (a % 2 == 0 && b % 2 == 1)
+		return false;
+	if (a % 2 == 1 && b % 2 == 0)
+		return true;
+	return asc(a, b);
+}
+
+template<class T>
+void bubbleSort(T* a, int n, bool(*method)(T, T) = asc)
+{
+	for (size_t i = 0; i < n - 1; i++)
+	{
+		for (size_t j = 0; j < n - 1 - i; j++)
+		{
+			if (method(a[j], a[j + 1]))
+				swap(a[j], a[j + 1]);
+		}
+	}
+}
+
+
+void kopatel()
+{
+	cout << "Копає один робочий з лопатою" << endl;
+}
+
+void kopatel3()
+{
+	cout << "Копають три робочих з лопатою і ломом" << endl;
+}
+
+void exkavator()
+{
+	cout << "Копає екскаватор, робочі палять в сторонці" << endl;
+}
+
+
+void(*prorab(int len))()
+{
+	if (len < 50)
+		return kopatel;
+	if (len > 50 && len < 200)
+		return kopatel3;
+	return exkavator;
+}
+
+
+int lenStr(const char* st)
+{
+	int count = 0;
+	while (st[count] != '\0')
+	{
+		count++;
+	}
+	return count;
 }
