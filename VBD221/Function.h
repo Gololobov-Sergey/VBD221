@@ -81,7 +81,7 @@ int findKeyArray(T* a, int size, T key)
 }
 
 template<class T>
-T maxValueArray(T* a, int size)
+double maxValueArray(T* a, int size)
 {
 	T max = a[0];
 	for (size_t i = 0; i < size; i++)
@@ -90,6 +90,29 @@ T maxValueArray(T* a, int size)
 			max = a[i];
 	}
 	return max;
+}
+
+template<class T>
+double minValueArray(T* a, int size)
+{
+	T min = a[0];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (a[i] < min)
+			min = a[i];
+	}
+	return min;
+}
+
+template<class T>
+double avgValueArray(T* a, int size)
+{
+	T avg = 0;
+	for (size_t i = 0; i < size; i++)
+	{
+		avg += a[i];
+	}
+	return avg / size;;
 }
 
 
@@ -291,4 +314,137 @@ int lenStr(const char* st)
 		count++;
 	}
 	return count;
+}
+
+double Action(int* arrA, int sizeA, int* arrB, int sizeB, double(*func)(int*, int))
+{
+	int* temp = new int[sizeA + sizeB];
+	for (size_t i = 0; i < sizeA; i++)
+	{
+		temp[i] = arrA[i];
+	}	for (size_t i = 0; i < sizeB; i++)
+	{
+		temp[i+sizeA] = arrB[i];
+	}
+	double res = func(temp, sizeA + sizeB);
+	delete[]temp;
+	return res;
+}
+
+
+char* reverse2Word(const char* str)
+{
+	char* res = new char[strlen(str) + 1];
+	const char* p = strchr(str, ' ');
+	strcpy(res, p + 1);
+	strcat(res, " ");
+	strncat(res, str, p - str);
+	return res;
+}
+
+char* firstLetterUp(const char* str)
+{
+	char* res = new char[strlen(str) + 1];
+	strcpy(res, str);
+	int i = 1;
+	if (islower(res[0]))
+		res[0] -= 32;
+	while (res[i] != '\0')
+	{
+		if (islower(res[i]) && isspace(str[i - 1]))
+		{
+			res[i] -= 32;
+		}
+		i++;
+	}
+	return res;
+}
+
+char* delSubstr(const char* str, const char* substr)
+{
+	char* temp = new char[strlen(str) + 1];
+	temp[0] = '\0';
+	while (strstr(str, substr) != nullptr)
+	{
+		const char* p = strstr(str, substr);
+		strncat(temp, str, p - str);
+		str = p + strlen(substr);
+	}
+	strcat(temp, str);
+	char* res = new char[strlen(temp) + 1];
+	strcpy(res, temp);
+	delete[] temp;
+	return res;
+}
+
+
+template<class T>
+void createArray2D(T**& arr, int row, int col)
+{
+	arr = new T * [row];
+	for (size_t i = 0; i < row; i++)
+	{
+		arr[i] = new T[col];
+	}
+}
+
+template<class T>
+void deleteArray2D(T**& arr, int row)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		delete[]arr[i];
+	}
+	delete[]arr;
+	arr = nullptr;
+}
+
+template<class T>
+void setArray2D(T** arr, int row, int col, int min = 0, int max = 9)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % (max - min + 1) + min;
+		}
+	}
+}
+template<class T>
+void printArray2D(T** arr, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << setw(3) << arr[i][j];
+		}
+		cout << endl;
+	}
+}
+
+template<class T>
+void addRowArray2D(T**& arr, int& row, int col, int pos, T* b = nullptr)
+{
+
+	T** temp = new T * [row + 1];
+	for (size_t i = 0; i < pos; i++)
+	{
+		temp[i] = arr[i];
+	}
+	temp[pos] = new T[col]{ 0 };
+	if (b != nullptr)
+	{
+		for (size_t i = 0; i < col; i++)
+		{
+			temp[pos][i] = b[i];
+		}
+	}
+	for (size_t i = pos; i < row; i++)
+	{
+		temp[i + 1] = arr[i];
+	}
+	row++;
+	delete[]arr;
+	arr = temp;
 }

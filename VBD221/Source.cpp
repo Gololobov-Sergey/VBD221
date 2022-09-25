@@ -15,6 +15,58 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	////// 25.09.2022 ///////
+
+	/*int a = 5;
+	int* p1 = &a;
+	cout << p1 << endl;
+	cout << &p1 << endl;
+
+	int** p2 = &p1;
+	cout << p2 << endl;
+	cout << *p2 << endl;
+	cout << **p2 << endl;*/
+
+	int row, col;
+	cin >> row >> col;
+	int** p = nullptr;
+	createArray2D(p, row, col);
+	setArray2D(p, row, col, -5, 15);
+	printArray2D(p, row, col);
+	cout << endl;
+
+	int* b = new int[col];
+	setArray(b, col);
+	printArray(b, col);
+	cout << endl;
+
+	addRowArray2D(p, row, col, 2);
+	printArray2D(p, row, col);
+
+
+
+	deleteArray2D(p, row);
+	cout << p << endl;
+
+	/*int** p = new int* [row];
+	for (size_t i = 0; i < row; i++)
+	{
+		p[i] = new int[col];
+	}*/
+
+
+
+	//Gololobov Serhiy      
+	//Serhiy Gololobov
+	/*cout << reverse2Word("Gololobov Serhiy") << endl;
+
+	cout << firstLetterUp("  JHGJHG sdkfjg dskjf wer    ertrwe wertert  ") << endl;
+	cout << delSubstr("C++, C#, PHP, Java, PHP, SQL, PHP", "PHP,") << endl;*/
+
+
+
+	//123 
+
 	////// 18.09.2022 ///////
 
 
@@ -35,13 +87,13 @@ int main()
 	cin.getline(str, 80);
 	cout << str << endl;*/
 
-	char buff[1024];
+	/*char buff[1024];
 	cin.getline(buff, 1024);
 	char* st1 = new char[strlen(buff) + 1];
 	strcpy(st1, buff);
 
 	char* st2 = new char[80];
-	cin.getline(st2, 80);
+	cin.getline(st2, 80);*/
 
 
 	//strcpy(st1, st2);
