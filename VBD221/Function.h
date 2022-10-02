@@ -448,3 +448,24 @@ void addRowArray2D(T**& arr, int& row, int col, int pos, T* b = nullptr)
 	delete[]arr;
 	arr = temp;
 }
+
+
+template<class T>
+void addColumn(T**& arr, int row, int col, int pos) 
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		T* temp = new T[col + 1];
+		for (size_t j = 0; j < pos; j++)
+		{
+			temp[j] = arr[i][j];
+		}
+		temp[pos] = 0;
+		for (size_t j = pos; j < col; j++)
+		{
+			temp[j+1] = arr[i][j];
+		}
+		delete[]arr[i];
+		arr[i] = temp;
+	}
+}

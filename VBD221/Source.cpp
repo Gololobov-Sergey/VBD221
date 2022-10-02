@@ -4,6 +4,7 @@
 #include<ctime>
 #include<iomanip>
 #include"Function.h"
+#include"Struct.h"
 
 using namespace std;
 
@@ -14,6 +15,48 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+
+	////// 02.10.2022 ///////
+
+	Point p;
+	p.x = 10;
+	p.y = 20;
+	p.name = 'A';
+
+	Point p1 = {2, 5, 'B'};
+
+	printPoint(p);
+	printPoint(p1);
+
+	Point p3[] = { {3,4,'C'}, {3,7,'D'}, 2,6,'E' };
+	for (size_t i = 0; i < 3; i++)
+	{
+		printPoint(p3[i]);
+	}
+	
+	Student st = { "Serg", 1,5,2000 };
+	//st.birthDay.day = 15;
+	printStudent(st);
+
+	Point* pp = new Point;
+	pp->x = 15;
+
+	Point* pa = new Point[5];
+	pa[0].x = 12;
+
+	delete[] pa;
+	delete pp;
+
+	Car c;
+	char buff[80];
+	cin.getline(buff, 80);
+	c.color = new char[strlen(buff) + 1];
+	strcpy(c.color, buff);
+	cout << c.color << endl;
+
+	//int p[10][3]; //{1,2,'A'}
+	//0 - x, 1 - y, 2 - name
+
 
 	////// 25.09.2022 ///////
 
@@ -27,26 +70,27 @@ int main()
 	cout << *p2 << endl;
 	cout << **p2 << endl;*/
 
-	int row, col;
-	cin >> row >> col;
-	int** p = nullptr;
-	createArray2D(p, row, col);
-	setArray2D(p, row, col, -5, 15);
-	printArray2D(p, row, col);
-	cout << endl;
+	//int row, col;
+	//cin >> row >> col;
+	//int** p = nullptr;
+	//createArray2D(p, row, col);
+	//setArray2D(p, row, col, -5, 15);
+	//printArray2D(p, row, col);
+	//cout << endl;
 
-	int* b = new int[col];
-	setArray(b, col);
-	printArray(b, col);
-	cout << endl;
+	//int* b = new int[col];
+	//setArray(b, col);
+	//printArray(b, col);
+	//cout << endl;
 
-	addRowArray2D(p, row, col, 2);
-	printArray2D(p, row, col);
+	//addColumn(p, row, col, 2);
+	////addRowArray2D(p, row, col, 2);
+	//printArray2D(p, row, col);
 
 
 
-	deleteArray2D(p, row);
-	cout << p << endl;
+	//deleteArray2D(p, row);
+	//cout << p << endl;
 
 	/*int** p = new int* [row];
 	for (size_t i = 0; i < row; i++)
