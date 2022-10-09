@@ -16,43 +16,67 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	////// 09.10.2022  /////
+
+
+	/*Biblio biblio;
+	biblio.books = new Book[5];
+	biblio.books[0];
+	biblio.menu();*/
+
+
+	//Point p;
+	//p.print(); // print(p)
+
+	cout << sizeof(Date) << endl;
+	Date d = { 29,10,2022 };
+	d.print();
+
+	/*Car car;
+	car.move(Direction::LEFT);
+	car.beep();
+	
+	Fraction f1 = { 0, 1,2 };
+	Fraction f2 = { 0, 1,4 };
+	Fraction f3 = f1.add(f2);*/
+
 	////// 02.10.2022 ///////
 
-	Point p;
-	p.x = 10;
-	p.y = 20;
-	p.name = 'A';
+	//Point p;
+	//p.x = 10;
+	//p.y = 20;
+	//p.name = 'A';
 
-	Point p1 = {2, 5, 'B'};
+	//Point p1 = {2, 5, 'B'};
 
-	printPoint(p);
-	printPoint(p1);
+	//printPoint(p);
+	//printPoint(p1);
 
-	Point p3[] = { {3,4,'C'}, {3,7,'D'}, 2,6,'E' };
-	for (size_t i = 0; i < 3; i++)
-	{
-		printPoint(p3[i]);
-	}
-	
-	Student st = { "Serg", 1,5,2000 };
-	//st.birthDay.day = 15;
-	printStudent(st);
+	//Point p3[] = { {3,4,'C'}, {3,7,'D'}, 2,6,'E' };
+	//for (size_t i = 0; i < 3; i++)
+	//{
+	//	printPoint(p3[i]);
+	//}
+	//
+	//Student st = { "Serg", 1,5,2000 };
+	////st.birthDay.day = 15;
+	//printStudent(st);
 
-	Point* pp = new Point;
-	pp->x = 15;
+	//Point* pp = new Point;
+	//pp->x = 15;
 
-	Point* pa = new Point[5];
-	pa[0].x = 12;
+	//Point* pa = new Point[5];
+	//pa[0].x = 12;
 
-	delete[] pa;
-	delete pp;
+	//delete[] pa;
+	//delete pp;
 
-	Car c;
-	char buff[80];
-	cin.getline(buff, 80);
-	c.color = new char[strlen(buff) + 1];
-	strcpy(c.color, buff);
-	cout << c.color << endl;
+	//Car c;
+	//char buff[80];
+	//cin.getline(buff, 80);
+	//c.color = new char[strlen(buff) + 1];
+	//strcpy(c.color, buff);
+	//cout << c.color << endl;
 
 	//int p[10][3]; //{1,2,'A'}
 	//0 - x, 1 - y, 2 - name

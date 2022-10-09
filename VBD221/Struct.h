@@ -3,59 +3,138 @@
 
 using namespace std;
 
+
+enum Direction
+{
+	LEFT, RIGHT, UP, DOWN
+};
+
 struct Point
 {
 	int x = 0;
 	int y = 0;
 	char name;
+
+	void print()
+	{
+		cout << name << "(" << x << ", " << y << ")" << endl;
+	}
 };
 
-void printPoint(Point p)
-{
-	cout << p.name << "(" << p.x << ", " << p.y << ")" << endl;
-}
+
 
 
 struct Date
 {
-	int day, month, year;
+	size_t day   :  5;
+	size_t month :  4;
+	size_t year  : 12;
+
+	void print()
+	{
+		if (day < 10)
+			cout << 0;
+		cout << day << ".";
+		if (month < 10)
+			cout << 0;
+		cout << month << "." << year;
+	}
 };
 
-void printDate(Date d)
-{
-	if (d.day < 10)
-		cout << 0;
-	cout << d.day << ".";
-	if (d.month < 10)
-		cout << 0;
-	cout << d.month << "." << d.year;
-}
+
 
 struct Student
 {
 	char name[20];
 	Date birthDay;
+
+	void print()
+	{
+		cout << "Name: " << name << endl;
+		cout << "BD  : "; birthDay.print();
+		cout << endl;
+	}
 };
 
-void printStudent(Student st)
-{
-	cout << "Name: " << st.name << endl;
-	cout << "BD  : "; printDate(st.birthDay);
-	cout << endl;
-}
+
 
 struct Fraction
 {
-	int c, n, d;
+	int c, nom, den;
+
+	Fraction add(Fraction f2)
+	{
+		Fraction res;
+		res.nom = nom * f2.den + den * f2.nom;
+		res.den = den * f2.den;
+		///
+		return res;
+	}
+
 };
 
 
-Fraction add(Fraction f1, Fraction f2)
-{
 
-}
+
+
+
+struct Engine
+{
+	int cilindr = 4;
+	int klapan = 8;
+
+
+	void start()
+	{
+		cout << "Engine started" << endl;
+	}
+};
+
 
 struct Car
 {
-	char* color;
+	Engine engine;
+
+
+	void move(Direction dir)
+	{
+		engine.start();
+		cout << "Car move" << endl;
+		switch (dir)
+		{
+		case LEFT:
+			cout << "Left" << endl;
+			break;
+		case RIGHT:
+			break;
+		case UP:
+			break;
+		case DOWN:
+			break;
+		default:
+			break;
+		}
+	}
+
+	void beep()
+	{
+		cout << "Bee beep" << endl;
+	}
 };
+
+
+//struct Book
+//{
+//
+//};
+//
+//struct Biblio
+//{
+//	Book* books;
+//
+//	void addBook();
+//	///
+//	//
+//
+//	void menu();
+//};
