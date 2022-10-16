@@ -5,6 +5,8 @@
 #include<iomanip>
 #include"Function.h"
 #include"Struct.h"
+#include<fstream>
+
 
 using namespace std;
 
@@ -15,6 +17,159 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
+
+	////// 16.10.2022  //////
+
+
+	Point p3;
+	ifstream in("point.bin", ios::binary);
+	int n;
+	cin >> n;
+	in.seekg(sizeof(Point) * (n - 1), ios::end);
+	in.read((char*)&p3, sizeof(Point));
+	p3.print();
+
+	//A 10 2
+	//B
+
+
+	/*Student st = { new char[15] {"Serg Gololobov"}, 1,5,2000 };
+	st.print();
+
+	ofstream out("student.bin", ios::binary);
+	out.write((char*)&st, sizeof(Student));
+	int len = strlen(st.name) + 1;
+	out.write((char*)&len, sizeof(int));
+	out.write((char*)st.name, len);
+
+	out.close();*/
+
+	/*Student st;
+	ifstream in("student.bin", ios::binary);
+	in.read((char*)&st, sizeof(Student));
+	char buff[80];
+	int l;
+	in.read((char*)&l, sizeof(int));
+	in.read((char*)&buff, l);
+	st.name = new char[l];
+	strcpy(st.name, buff);
+	in.close();
+
+	st.print();*/
+
+
+	//Point p3[] = { {3,4,'C'}, {3,7,'D'}, 2,6,'E' };
+	////int a[] = { 2,5,6,4,6 };
+	////ofstream out("array.bin", ios::binary);
+	//ofstream out("point.bin", ios::binary);
+	//for (size_t i = 0; i < 5; i++)
+	//{
+	//	out.write((char*)&p3[i], sizeof(Point));
+	//}
+	//out.close();
+
+
+	//int b[5];
+	//ifstream in("array.bin", ios::binary);
+	/*Point p3[3];
+	ifstream in("point.bin", ios::binary);
+	for (size_t i = 0; i < 3; i++)
+	{
+		in.read((char*)&p3[i], sizeof(Point));
+		p3[i].print();
+	}*/
+	//printArray(b, 5);
+
+	//13456456 24356 34563456 43456346 543563456 
+	/*Student st[] = { {"Serg Gololobov", 1,5,2000}, {"Ivan", 20, 11,2001}, {"Olga", 2,12,1999}};
+	ofstream out("students.txt");
+	for (size_t i = 0; i < 3; i++)
+	{
+		out << st[i].name << endl;
+		out << st[i].birthDay.day << " "
+			<< st[i].birthDay.month << " " << st[i].birthDay.year << endl;
+	}*/
+
+
+	/*Student st;
+	ifstream in("students.txt");
+	int d, m, y;
+	in.getline(st.name, 20);
+	in >> d >> m >> y;
+	st.birthDay.day = d;
+	st.birthDay.month = m;
+	st.birthDay.year = y;
+
+	st.print();*/
+
+	//Serg 1 5 2000
+	//
+
+	/*Point p3[] = { {3,4,'C'}, {3,7,'D'}, 2,6,'E' };
+	ofstream out("point.txt");
+	for (size_t i = 0; i < 3; i++)
+	{
+		p3[i].save(out);
+	}*/
+	
+
+	/*ifstream in("point.txt");
+	Point* p = nullptr;
+	int s = 0;
+	Point t;
+	while (in >> t.name >> t.x >> t.y)
+	{
+		addElemArray(p, s, t);
+	}
+	for (size_t i = 0; i < 3; i++)
+	{
+		p[i].print();
+	}*/
+	/*ifstream in("Source.cpp");
+	char buff[200];
+	while (in.getline(buff, 200))
+	{
+		in.getline(buff, 200)
+
+		in.getline(buff, 200)
+		in.getline(buff, 200)
+		cout << buff << endl;
+	}
+	in.close();*/
+
+	/*int arr[] = { 1,2,3,4,5 };
+
+	ofstream out;
+	out.open("text.txt");
+	for (size_t i = 0; i < 5; i++)
+	{
+		out << arr[i] << " ";
+	}
+	out.close();*/
+
+
+	//int* b = nullptr;
+	//int size = 0;
+	//ifstream in;
+	//in.open("text.txt");
+	//ofstream out("text2.txt");
+	//int t;
+	//if (in.is_open())
+	//{
+	//	while (in >> t)
+	//	{
+	//		if (t % 2 == 0)
+	//			out << t << " ";
+	//		//addElemArray(b, size, t);
+	//	}
+	//}
+	////printArray(b, size);
+	//out.close();
+	//in.close();
+
+
+
+
 
 	////// 09.10.2022  /////
 
@@ -28,9 +183,9 @@ int main()
 	//Point p;
 	//p.print(); // print(p)
 
-	cout << sizeof(Date) << endl;
+	/*cout << sizeof(Date) << endl;
 	Date d = { 29,10,2022 };
-	d.print();
+	d.print();*/
 
 	/*Car car;
 	car.move(Direction::LEFT);

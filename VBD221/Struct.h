@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<fstream>
 
 using namespace std;
 
@@ -18,6 +19,11 @@ struct Point
 	void print()
 	{
 		cout << name << "(" << x << ", " << y << ")" << endl;
+	}
+
+	void save(ofstream& out)
+	{
+		out << name << " " << x << " " << y << endl;
 	}
 };
 
@@ -45,7 +51,7 @@ struct Date
 
 struct Student
 {
-	char name[20];
+	char* name;
 	Date birthDay;
 
 	void print()

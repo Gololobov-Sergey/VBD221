@@ -30,4 +30,15 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="array.bin">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="point.bin">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="student.bin">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+  </ItemGroup>
 </Project>
