@@ -18,16 +18,57 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+
+	////// 23.10.2022  ///////
+
+
+	// | , & , ^ , ~ , >> , << 
+	Sleep(5000);
+
+	SetColor(Color::LightRed, Color::Black);
+
+	//cout << (~10) << endl;
+
+	int d = 23, m = 10, y = 2022;
+
+	int r = 0;
+
+	r = d;
+
+	r <<= 4;
+
+	r += m;
+
+	r <<= 12;
+
+	r += y;
+
+	cout << r << endl;
+
+	int d1, m1, y1;
+
+	y1 = r & 4095;
+	r >>= 12;
+	m1 = r & 15;
+	d1 = r >> 4;
+
+	cout << d1 << "." << m1 << "." << y1 << endl;
+
+
+
+
+
+
 	////// 16.10.2022  //////
 
 
-	Point p3;
+	/*Point p3;
 	ifstream in("point.bin", ios::binary);
 	int n;
 	cin >> n;
 	in.seekg(sizeof(Point) * (n - 1), ios::end);
 	in.read((char*)&p3, sizeof(Point));
-	p3.print();
+	p3.print();*/
 
 	//A 10 2
 	//B
