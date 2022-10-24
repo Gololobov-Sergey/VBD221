@@ -6,6 +6,7 @@
 #include"Function.h"
 #include"Struct.h"
 #include<fstream>
+#include"Menu.h"
 
 
 using namespace std;
@@ -19,40 +20,63 @@ int main()
 	cout.setf(ios::boolalpha);
 
 
+	char** menuItem = new char* [5];
+	menuItem[0] = new char[] {" Print "};
+	menuItem[1] = new char[] {" Add "};
+	menuItem[2] = new char[] {" Del "};
+	menuItem[3] = new char[] {" Sort by... "};
+	menuItem[4] = new char[] {" Exit "};
+
+
+	int choice = vertical_menu(
+		menuItem, 
+		HORIZONTAL_POSITION::LEFT, 
+		VERTICAL_POSITION::TOP,
+		ALLIGNMENT::LEFT);
+	switch (choice)
+	{
+	case 0:
+
+	default:
+		break;
+	}
+
+
+
 	////// 23.10.2022  ///////
 
 
 	// | , & , ^ , ~ , >> , << 
-	Sleep(5000);
+	//Sleep(5000);
 
-	SetColor(Color::LightRed, Color::Black);
+	//SetColor(Color::LightRed, Color::Black);
 
-	//cout << (~10) << endl;
+	////cout << (~10) << endl;
 
-	int d = 23, m = 10, y = 2022;
+	//int d = 23, m = 10, y = 2022;
 
-	int r = 0;
+	//int r = 0;
 
-	r = d;
+	//r = d;
 
-	r <<= 4;
+	//r <<= 4;
 
-	r += m;
+	//r += m;
 
-	r <<= 12;
+	//r <<= 12;
 
-	r += y;
+	//r += y;
 
-	cout << r << endl;
+	//cout << r << endl;
 
-	int d1, m1, y1;
+	//int d1, m1, y1;
 
-	y1 = r & 4095;
-	r >>= 12;
-	m1 = r & 15;
-	d1 = r >> 4;
+	//y1 = r & 4095;
+	//r >>= 12;
+	//m1 = r & 15;
+	//d1 = r >> 4;
 
-	cout << d1 << "." << m1 << "." << y1 << endl;
+	//cout << d1 << "." << m1 << "." << y1 << endl;
 
 
 
