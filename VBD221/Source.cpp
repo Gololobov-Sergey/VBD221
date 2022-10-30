@@ -7,9 +7,26 @@
 #include"Struct.h"
 #include<fstream>
 #include"Menu.h"
+#include"Header.h"
+#include"Point.h"
+
+
+#define PI 3.141592
+#define PRINT_ERROR cout << "Error" << endl;
+#define ÏÎ×ÀÒÎÊ {
+#define Ê²ÍÅÖÜ }
+#define ÖÈÊË(n) for(int i = 0; i < n; i++)
+#define Ö²ËÅ int
+#define SQR(n) (n)*(n)
 
 
 using namespace std;
+
+#define STAT
+
+#define SA setArray
+//#define x 5
+
 
 
 
@@ -19,8 +36,62 @@ int main()
 	SetConsoleOutputCP(1251);
 	cout.setf(ios::boolalpha);
 
+	const int b = 2;
 
-	char** menuItem = new char* [5];
+	ofstream out;
+
+	Point p;
+	p.x = 100;
+	p.save(out);
+	p.menu();
+
+//#if b == 5
+#ifdef STAT
+//#ifndef STAT
+	int a[10];
+	cout << "Static array" << endl;
+//#elif
+#else
+	int* a = new int[10];
+	cout << "dynamic array" << endl;
+#endif
+
+
+	setArray(a, 10);
+	printArray(a, 10);
+
+	cout << __DATE__ << endl;
+	cout << __TIME__ << endl;
+	cout << __FILE__ << endl;
+	cout << __LINE__ << endl;
+
+
+	cout << avg(3, 4, 5) << endl;
+	foooo();
+
+//#define SIZE 50
+//	const int size = 50;
+//	int arr[SIZE];
+//	SA(arr, SIZE);
+//	/*int* arr2 = nullptr;
+//	addElemArray(arr2, SIZE);*/
+////#undef SIZE
+//#define SIZE 100
+//	Ö²ËÅ x = 10;
+//	cout << IKS << endl;
+//	int arrr[SIZE];
+//	PRINT_ERROR
+//
+//	ÖÈÊË(15)
+//	ÏÎ×ÀÒÎÊ
+//		cout << "Hello" <<  endl;
+//	Ê²ÍÅÖÜ
+//
+//	cout << SQR(5 + 1) << endl;
+
+
+
+	/*char** menuItem = new char* [5];
 	menuItem[0] = new char[] {" Print "};
 	menuItem[1] = new char[] {" Add "};
 	menuItem[2] = new char[] {" Del "};
@@ -39,7 +110,7 @@ int main()
 
 	default:
 		break;
-	}
+	}*/
 
 
 
@@ -809,3 +880,4 @@ int main()
 
 	system("pause");
 }
+

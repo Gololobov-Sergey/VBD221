@@ -10,22 +10,7 @@ enum Direction
 	LEFT, RIGHT, UP, DOWN
 };
 
-struct Point
-{
-	int x = 0;
-	int y = 0;
-	char name;
 
-	void print()
-	{
-		cout << name << "(" << x << ", " << y << ")" << endl;
-	}
-
-	void save(ofstream& out)
-	{
-		out << name << " " << x << " " << y << endl;
-	}
-};
 
 
 

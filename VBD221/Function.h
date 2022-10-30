@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include"Header.h"
 
 using namespace std;
 
@@ -21,6 +22,12 @@ void gotoxy(int x, int y)
 	coord.X = x;
 	coord.Y = y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
+
+void foooo()
+{
+	cout << avg(3, 4, 6) << endl;
 }
 
 //type name (param)
@@ -46,10 +53,10 @@ void printLine(int count = 10, char symbol = '*')
 }
 
 
-float avg(int a, int b, int c)
-{
-	return (a + b + c) / 3.;
-}
+//float avg(int a, int b, int c)
+//{
+//	return (a + b + c) / 3.;
+//}
 
 bool isEven(int a)
 {
@@ -77,6 +84,12 @@ void setArray(T* a, int size)
 	}
 }
 
+/// <summary>
+/// Виконує друк масиву на екрані консолі
+/// </summary>
+/// <typeparam name="T">Визначеня типу Т</typeparam>
+/// <param name="a">- масив</param>
+/// <param name="size">- розмір масиву</param>
 template<class T>
 void printArray(const T* a, int size)
 {
@@ -87,6 +100,15 @@ void printArray(const T* a, int size)
 	cout << endl;
 }
 
+
+/// <summary>
+/// 
+/// </summary>
+/// <typeparam name="T"></typeparam>
+/// <param name="a"></param>
+/// <param name="size"></param>
+/// <param name="key"></param>
+/// <returns></returns>
 template<class T>
 int findKeyArray(T* a, int size, T key)
 {

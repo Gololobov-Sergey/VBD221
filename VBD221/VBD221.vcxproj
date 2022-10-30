@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,12 +129,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Header.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SourceOld.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Function.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Struct.h" />
   </ItemGroup>
   <ItemGroup>
